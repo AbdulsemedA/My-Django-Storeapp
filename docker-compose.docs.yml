@@ -1,0 +1,17 @@
+services:
+  docs:
+    image: my_ecommerce_app_local_docs
+    container_name: my_ecommerce_app_local_docs
+    build:
+      context: .
+      dockerfile: ./compose/local/docs/Dockerfile
+    env_file:
+      - ./.envs/.local/.django
+    volumes:
+      - /app/.venv
+      - ./docs:/docs:z
+      - ./config:/app/config:z
+      - ./my_ecommerce_app:/app/my_ecommerce_app:z
+    ports:
+      - '9000:9000'
+    command: /start-docs
