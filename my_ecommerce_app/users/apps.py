@@ -10,4 +10,4 @@ class UsersConfig(AppConfig):
 
     def ready(self):
         with contextlib.suppress(ImportError):
-            import my_ecommerce_app.users.signals  # noqa: F401, PLC0415
+            pass

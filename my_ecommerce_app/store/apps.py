@@ -2,6 +2,8 @@ from django.apps import AppConfig
 
 
 class StoreConfig(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
-    name = 'my_ecommerce_app.store'
+    default_auto_field = "django.db.models.BigAutoField"
+    name = "my_ecommerce_app.store"
 
+    def ready(self):
+        pass
